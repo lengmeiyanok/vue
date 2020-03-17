@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap {
+            display: flex;
+            align-content: center;
+            width: 100%;
+            padding: 30px;
+        }
+
+        .wrap>div {
+            width: 100%;
+        }
+    </style>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div>请输入：<input value=""></input></div>
+        <div>
+            响应信息：<span id='app'></span>
+        </div>
+    </div>
+</body>
+<script>
+    let vm = new Vue()
+    document.getElementsByTagName('input')[0].addEventListener('input', function (ev) {
+        let target = ev.target
+        vm.$data.msg = target.value
+    })
+</script>
+
+</html>
